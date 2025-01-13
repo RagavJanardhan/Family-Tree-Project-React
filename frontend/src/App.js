@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';  // Importing CSS for the App component
 import './HomePage.css';  // Import the custom CSS file for HomePage
+import FamilyTree from "./components/familyTree";
 
 // HomePage component
 const HomePage = () => {
@@ -25,11 +26,11 @@ function App() {
 
   return (
     <div className="App">
-      <HomePage /> {/* Adding the HomePage component here */}
-      <h1>React + Flask</h1>
-      <p>{message || 'Loading message from Flask API...'}</p>
+      <h1>Family Tree Visualization</h1>
+      <FamilyTree />
     </div>
   );
+
 }
 
 export default App;
