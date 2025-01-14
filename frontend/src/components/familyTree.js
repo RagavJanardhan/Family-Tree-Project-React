@@ -48,7 +48,7 @@ export default class FamilyTree extends React.Component {
     this.f3Chart = f3
       .createChart("#FamilyChart", data)
       .setTransitionTime(1000)
-      .setCardXSpacing(250)
+      .setCardXSpacing(280)
       .setCardYSpacing(150)
       .setOrientationVertical()
       .setSingleParentEmptyCard(true, { label: "ADD" });
@@ -66,6 +66,7 @@ export default class FamilyTree extends React.Component {
       .setMiniTree(true)
       .setStyle("imageRect")
       .setOnHoverPathToMain()
+      .setCardDim({ width: 250, height: 100 })
       .setCardDisplay(card_display);
 
     const f3EditTree = this.f3Chart

@@ -7,17 +7,17 @@ CORS(app)  # Allow cross-origin requests from React
 # Predefined family tree data
 family_data = [
     {
-        "id": "0",
-        "rels": {},
-        "data": {
-            "first name": "Ragav",
-            "last name": "Janardhan",
-            "birthday": "2005-12-02",
-            "avatar": "https://static8.depositphotos.com/1009634/988/v/950/depositphotos_9883921-stock-illustration-no-user-profile-picture.jpg",
-            "gender": "M",
-            "death date": ""  
-        }
-    }
+    "data": {
+      "avatar": "https://media.licdn.com/dms/image/v2/C4D03AQFYrYS4yVf1Mg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1643851825494?e=2147483647&v=beta&t=Ugq8Jf33WAuFKNc0Te5qiW9m1JgPfGH8U10dVmOOMjY",
+      "birthday": "2005-12-02",
+      "death date": "",
+      "first name": "Ragav",
+      "gender": "M",
+      "last name": "Janardhan"
+    },
+    "id": "0",
+    "rels": {}
+  }
 ]
 
 # Endpoint to serve family tree data
