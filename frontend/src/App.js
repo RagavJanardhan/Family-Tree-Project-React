@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './App.css';  // Importing CSS for the App component
 import './HomePage.css';  // Import the custom CSS file for HomePage
 import FamilyTree from "./components/familyTree";
@@ -14,23 +14,12 @@ const HomePage = () => {
 };
 
 function App() {
-  const [message, setMessage] = useState('');
-
-  // Fetching data from the Flask API
-  useEffect(() => {
-    fetch('/api')
-      .then(response => response.json())
-      .then(data => setMessage(data.message))
-      .catch(error => console.error('Error fetching API:', error));
-  }, []);
-
   return (
     <div className="App">
       <h1>Family Tree Visualization</h1>
       <FamilyTree />
     </div>
   );
-
 }
 
 export default App;
