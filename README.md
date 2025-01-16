@@ -38,9 +38,12 @@ Family-Tree-Project-React/
  ┃ ┗ 📜robots.txt
  ┣ 📂src
  ┃ ┣ 📂components
+ ┃ ┃ ┣ 📂ContactPage
+ ┃ ┃ ┃ ┗ 📜ContactPage.js
  ┃ ┃ ┣ 📂FamilyTree
- ┃ ┃ ┃ ┣ 📜familyTree.css
- ┃ ┃ ┃ ┗ 📜familyTree.js
+ ┃ ┃ ┃ ┣ 📜FamilyTree.js
+ ┃ ┃ ┃ ┣ 📜FamilyTreePage.js
+ ┃ ┃ ┃ ┗ 📜FamilyTrees.css
  ┃ ┃ ┗ 📂HomePage
  ┃ ┃ ┃ ┣ 📜HomePage.css
  ┃ ┃ ┃ ┗ 📜HomePage.js
