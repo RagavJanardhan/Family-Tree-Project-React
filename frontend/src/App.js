@@ -1,24 +1,32 @@
 import React from 'react';
-import './styles/App.css';  // Importing CSS for the App component
-import './components/HomePage/HomePage.css';  // Import the custom CSS file for HomePage
-import FamilyTree from "./components/FamilyTree/familyTree.js";
+import { BrowserRouter as Router, Route, Routes, NavLink } from 'react-router-dom';
+import './styles/App.css';
 
-// HomePage component
-const HomePage = () => {
-  return (
-    <div className="homepage">
-      <h1>Welcome to the Family Tree Project</h1>
-      <p>This is a simple React page with custom styling!</p>
-    </div>
-  );
-};
+// Importing the page components
+import HomePage from './components/HomePage/HomePage';
+import FamilyTreePage from './components/FamilyTree/FamilyTreePage';
+import ContactPage from './components/ContactPage/ContactPage';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Family Tree Visualization</h1>
-      <FamilyTree />
-    </div>
+    <Router>
+      <div className="App">
+        <nav>
+          <ul>
+            <li><NavLink to="/" exact className="active">Home</NavLink></li>
+            <li><NavLink to="/family-tree" className="active">Family Tree</NavLink></li>
+            <li><NavLink to="/contact" className="active">Contact</NavLink></li>
+          </ul>
+        </nav>
+
+        {/* Route setup */}
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/family-tree" element={<FamilyTreePage />} />
+          <Route path="/contact" element={<ContactPage />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
