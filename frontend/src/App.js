@@ -4,6 +4,9 @@ import './styles/App.css';
 
 // Importing the page components
 import HomePage from './components/HomePage/HomePage';
+
+// There may be an error here, It doesn't seem to affect compilation
+// But the error persists
 import FamilyTreePage from './components/FamilyTree/FamilyTreePage';
 import ContactPage from './components/ContactPage/ContactPage';
 
