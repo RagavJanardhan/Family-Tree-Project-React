@@ -18,7 +18,7 @@ const FamilyTreePage = () => {
           </Typography>
 
           {/* Family Tree component wrapped in a Paper component */}
-          <Paper elevation={3} sx={{ padding: 1 }}>
+          <Paper elevation={3} sx={{ padding: 1, width: '100%' }}>
             <FamilyTree />
           </Paper>
         </Box>

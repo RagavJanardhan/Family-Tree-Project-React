@@ -68,6 +68,18 @@ const theme = createTheme({
         },
       },
     },
+    MuiToolbar: {
+      styleOverrides: {
+        root: {
+          paddingLeft: '16px',
+          paddingRight: '16px',
+          '& .MuiButton-root': {
+            marginLeft: '8px',
+            marginRight: '8px',
+          },
+        },
+      },
+    },
   },
   spacing: 8, // Sets default spacing unit to 8px
 });
