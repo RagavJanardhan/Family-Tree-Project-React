@@ -1,15 +1,28 @@
 import React from 'react';
-
-// There may be an error here, It doesn't seem to affect compilation
-// But the error persists
-import FamilyTree from './FamilyTree';
+import { Typography, Container, Paper, Box } from '@mui/material'; // Import Material-UI components
+import FamilyTree from './FamilyTree'; // Import the FamilyTree component
 
 const FamilyTreePage = () => {
   return (
     <div className="family-tree-page">
-      <h1>Family Tree Visualization</h1>
-      <p>Here you can view the family tree and its relationships.</p>
-      <FamilyTree />
+      <Container>
+        <Box sx={{ marginTop: 2 }}>
+          {/* Family Tree Page Title */}
+          <Typography variant="h3" color="primary" gutterBottom>
+            Family Tree Visualization
+          </Typography>
+
+          {/* Description */}
+          <Typography variant="body1" color="textSecondary" paragraph>
+            Here you can view the family tree and its relationships.
+          </Typography>
+
+          {/* Family Tree component wrapped in a Paper component */}
+          <Paper elevation={3} sx={{ padding: 1 }}>
+            <FamilyTree />
+          </Paper>
+        </Box>
+      </Container>
     </div>
   );
 };

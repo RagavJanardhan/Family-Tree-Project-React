@@ -5,9 +5,20 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /*background-color: #000000;*/
+  color: #ffffff; /* Ensure text is readable */
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* Optional: Set App's root container to fill the entire screen */
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
