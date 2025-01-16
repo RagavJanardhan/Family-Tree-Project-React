@@ -1,6 +1,6 @@
 import React from "react";
 import f3 from "family-chart"; // npm install family-chart@0.2.1 or yarn add family-chart@0.2.1
-import "../styles/familyTree.css";
+import "./familyTree.css";
 
 export default class FamilyTree extends React.Component {
   cont = React.createRef();

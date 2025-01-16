@@ -1,7 +1,7 @@
 import React from 'react';
-import './App.css';  // Importing CSS for the App component
-import './HomePage.css';  // Import the custom CSS file for HomePage
-import FamilyTree from "./components/familyTree";
+import './styles/App.css';  // Importing CSS for the App component
+import './components/HomePage/HomePage.css';  // Import the custom CSS file for HomePage
+import FamilyTree from "./components/FamilyTree/familyTree.js";
 
 // HomePage component
 const HomePage = () => {
