@@ -1,6 +1,6 @@
 import React from "react";
 import f3 from "family-chart"; // npm install family-chart@0.2.1 or yarn add family-chart@0.2.1
-import "./FamilyTree.css";
+import "./FamilyTrees.css"; // I predict an Error here
 
 //Updating this file to see if the error changes
 
