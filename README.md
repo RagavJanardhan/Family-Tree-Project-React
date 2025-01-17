@@ -107,7 +107,7 @@ Family-Tree-Project-React/
 
 2. **Install React Dependencies:**
    ```bash
-    cd ../
+    cd frontend
     npm install
     npm start
    ```

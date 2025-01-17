@@ -4,14 +4,14 @@ const theme = createTheme({
   palette: {
     mode: "dark", // Enable dark mode
     primary: {
-      main: "#1e88e5", // Softer, darker blue for better contrast (was #1976d2)
+      main: "#f7f8f8", 
     },
     secondary: {
-      main: "#f50057", // A bit softer pink (was #ff4081)
+      main: "#e6e6e6",
     },
     background: {
-      default: "#121212", // Dark background color for the app
-      paper: "#212121", // Slightly lighter paper background for better contrast
+      default: "rgba(0, 0, 0, 0)", // Transparent background
+      paper: "#010101", // Slightly lighter paper background for better contrast
     },
     text: {
       primary: "#ffffff", // White text for primary text
@@ -19,16 +19,7 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: "Roboto, Arial, sans-serif",
-    h1: {
-      fontWeight: 700,
-      fontSize: "2.5rem",
-      color: "#ffffff", // Ensure header text is white for contrast
-    },
-    h2: {
-      fontWeight: 600,
-      color: "#ffffff", // Ensuring h2 is white too
-    },
+    fontFamily: "Verdana, Tahoma, Trebuchet MS, Arial, sans-serif",
     body1: {
       fontSize: "1rem",
       color: "#e0e0e0", // Slightly lighter body text
@@ -46,9 +37,9 @@ const theme = createTheme({
           textTransform: "none",
           padding: "8px 16px",
           color: "#ffffff", // Button text color
-          backgroundColor: "#1e88e5", // Match primary color for buttons
+          backgroundColor: "#101010", // Match primary color for buttons
           "&:hover": {
-            backgroundColor: "#1565c0", // Darker hover for primary button
+            backgroundColor: "#202020", // Darker hover for primary button
           },
         },
       },
@@ -56,8 +47,9 @@ const theme = createTheme({
     MuiAppBar: {
       styleOverrides: {
         root: {
-          backgroundColor: "#333333", // Darker AppBar background
+          backgroundColor: "#010101", // Darker AppBar background
           boxShadow: "none", // No shadow for the AppBar
+          backgroundImage: "none", // Override any background image
         },
       },
     },
