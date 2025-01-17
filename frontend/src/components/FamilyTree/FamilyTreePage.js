@@ -1,28 +1,22 @@
 import React from 'react';
-import { Typography, Container, Paper, Box } from '@mui/material'; // Import Material-UI components
 import FamilyTree from './FamilyTree'; // Import the FamilyTree component
 
 const FamilyTreePage = () => {
   return (
-    <div className="family-tree-page">
-      <Container>
-        <Box sx={{ marginTop: 2 }}>
-          {/* Family Tree Page Title */}
-          <Typography variant="h3" color="primary" gutterBottom>
-            Family Tree Visualization
-          </Typography>
+    <div className="family-tree-page" style={{ height: '100%' }}>      {/* Family Tree Page Title */}
+      <h3>
+        Family Tree Visualization
+      </h3>
 
-          {/* Description */}
-          <Typography variant="body1" color="textSecondary" paragraph>
-            Here you can view the family tree and its relationships.
-          </Typography>
+      {/* Description */}
+      <p>
+        Here you can view the family tree and its relationships.
+      </p>
 
-          {/* Family Tree component wrapped in a Paper component */}
-          <Paper elevation={3} sx={{ padding: 1, width: '100%' }}>
-            <FamilyTree />
-          </Paper>
-        </Box>
-      </Container>
+      {/* Family Tree component */}
+      <div style={{ width: '100%', margin: '0 auto' }}>
+        <FamilyTree />
+      </div>
     </div>
   );
 };

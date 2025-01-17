@@ -2,7 +2,7 @@
 .f3 {
     --female-color: rgb(196, 138, 146);
     --male-color: rgb(120, 159, 172);
-    --background-color: rgb(33, 33, 33);
+    --background-color: #101010;
   
     font-family: 'Roboto', sans-serif;
   }
