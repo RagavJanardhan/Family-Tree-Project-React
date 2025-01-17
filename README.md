@@ -19,7 +19,6 @@ Family-Tree-Project-React/
 📦backend
  ┣ 📜app.py
  ┗ 📜requirements.txt         
-
 ```
 
 ---
@@ -31,9 +30,8 @@ Family-Tree-Project-React/
  ┣ 📂node_modules
  ┣ 📂public
  ┃ ┣ 📜favicon.ico
+ ┃ ┣ 📜favicon.png
  ┃ ┣ 📜index.html
- ┃ ┣ 📜logo192.png
- ┃ ┣ 📜logo512.png
  ┃ ┣ 📜manifest.json
  ┃ ┗ 📜robots.txt
  ┣ 📂src
@@ -61,7 +59,6 @@ Family-Tree-Project-React/
  ┣ 📜package-lock.json
  ┣ 📜package.json
  ┗ 📜README.md
-
 ```
 
 ---
@@ -70,7 +67,8 @@ Family-Tree-Project-React/
 ## Future Plans
 
 ### Deployment
-- Host the application on Vercel for public accessibility.
+- Deploy the frontend, potentially using platforms like Heroku or Vercel.
+- Integrate Google Cloud Storage or AWS S3 for reliable and persistent data storage, ensuring seamless data retrieval.
 
 ### UI Improvements
 - Enhance the React front end with better interactivity and styling.
