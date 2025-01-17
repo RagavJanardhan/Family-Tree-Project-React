@@ -30,8 +30,8 @@ function App() {
         className="App"
         style={{
           height: '100%', // Ensure the div takes up the full height of the viewport
-          //background: `linear-gradient(${angle}deg, rgb(0 0 0 / 80%), rgb(255 255 255 / 80%))`, // Apply dynamic gradient
-          background: `linear-gradient(${angle}deg, rgb(63 65 194 / 80%), rgb(104 14 14 / 80%))`, // Apply dynamic gradient
+          background: `linear-gradient(${angle}deg, rgba(1, 1, 1, 1), rgba(25, 25, 25, 0.9))`, // Subtle gradient staying close to #010101
+          //background: `linear-gradient(${angle}deg, rgb(63 65 194 / 80%), rgb(104 14 14 / 80%))`, // Apply dynamic gradient
           transition: 'background 0.1s ease', // Smooth transition for the background change
         }}
         >
