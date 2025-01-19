@@ -43,7 +43,6 @@ function App() {
             background: mode === 'dark' 
             ? `linear-gradient(${angle}deg, rgba(1, 1, 1, 1), rgba(3, 3, 3, .95))`  // Dark mode gradient
             : `linear-gradient(${angle}deg, rgba(255, 255, 255, 1), rgba(240, 240, 240, 1))`,  // Light mode gradient
-            transition: 'background 0.1s ease', // Smooth transition for the background change
           }}
         >
           {/* AppBar for navigation */}
