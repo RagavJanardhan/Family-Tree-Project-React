@@ -1,5 +1,6 @@
 import React from 'react';
-import { ReactTyped } from "react-typed";import { Typography, Paper } from '@mui/material';  // Import Material-UI components
+import { ReactTyped } from "react-typed";
+import { Typography, Paper } from '@mui/material';  // Import Material-UI components
 
 const HomePage = () => {
   return (
@@ -14,7 +15,7 @@ const HomePage = () => {
       }}
     >
       <Paper
-        elevation={3}
+        elevation={1}
         style={{
           padding: '20px',
           width: '95vw',  // Paper takes up almost the full width of the viewport
@@ -32,10 +33,10 @@ const HomePage = () => {
           backDelay={0} // Prevent delay before erasing (set backDelay to 0)
           loop={false} // Prevent the typing animation from looping
           showCursor={false} // Hide the cursor after typing finishes
-          style={{ fontSize: '1.5em' }} // Increase text size (twice as big)
+          style={{ fontSize: '1.5em' }} // Increase text size 
         />
         
-        <Typography variant="body1" color="textSecondary" paragraph>
+        <Typography variant="body1" color="textSecondary">
           This is a simple React app for visualizing family trees.
         </Typography>
         <Typography variant="h5" color="primary" gutterBottom>
