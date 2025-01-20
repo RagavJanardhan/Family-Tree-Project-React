@@ -1,9 +1,7 @@
 import React from "react";
 import f3 from "family-chart"; // npm install family-chart@0.2.1 or yarn add family-chart@0.2.1
-import "./FamilyTrees.css"; // I predict an Error here
-
-//Updating this file to see if the error changes
-
+import { Button, Box } from "@mui/material";
+import "./FamilyTrees.css";
 export default class FamilyTree extends React.Component {
   cont = React.createRef();
   f3Chart = null; // Declare f3Chart at the class level
@@ -98,7 +96,7 @@ export default class FamilyTree extends React.Component {
     console.log("f3Chart initialized:", this.f3Chart); // Debug to confirm initialization
   };
 
-  handleSave = () => {
+  handleDownloadButton = () => {
     // Check if the chart is initialized
     if (!this.f3Chart) {
       console.error("f3Chart is not initialized.");
@@ -137,11 +135,60 @@ export default class FamilyTree extends React.Component {
     console.log("Family tree data downloaded successfully!");
   };  
 
-  render() {
+  handleSaveButton = () => {
+    console.log("Save button clicked.");
+  };
+
+  render() {    
+    const { theme } = this.props; // Access the theme from props
     return (
       <div>
         <div className="f3 f3-cont" id="FamilyChart" ref={this.cont}></div>
-        <button onClick={this.handleSave}>Save Changes</button>
+        
+        {/* Buttons side by side */}
+        <Box 
+          sx={{ 
+            display: 'flex', 
+            gap: 2, // Spacing between buttons
+            marginTop: 2 // Margin above the button container
+          }}
+        >
+          {/* Save Changes Button */}
+          <Button 
+            variant="outlined" 
+            onClick={() => {
+              this.handleSaveButton();  // Call the save handler
+            }}
+            sx={{
+              color: theme.palette.auxilary.redText, // Text color
+              backgroundColor: 'rgba(0, 0, 0, 0)',
+              '&:hover': {
+                backgroundColor: theme.palette.auxilary.redBackground, // Darker shade on hover
+                borderColor: theme.palette.auxilary.redText, // Use primary color for the border
+              },
+            }}
+          >
+            Save Changes
+          </Button>
+
+          {/* Download Data JSON Button */}
+          <Button 
+            variant="outlined" 
+            onClick={() => {
+              this.handleDownloadButton();  // Call the save handler
+            }}
+            sx={{
+              color: theme.palette.auxilary.greenText,
+              backgroundColor: 'rgba(0, 0, 0, 0)',
+              '&:hover': {
+                backgroundColor: theme.palette.auxilary.greenBackground, // Darker shade on hover
+                borderColor: theme.palette.auxilary.greenText, // Use primary color for the border
+              },
+            }}
+          >
+            Download Data JSON
+          </Button>
+        </Box>
       </div>
     );
   }

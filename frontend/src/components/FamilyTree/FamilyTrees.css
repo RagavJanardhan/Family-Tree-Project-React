@@ -2,8 +2,12 @@
 .f3 {
     --female-color: rgb(196, 138, 146);
     --male-color: rgb(120, 159, 172);
-    --background-color: #101010;
-  
+    --background-color: var(--primary-main); /* Use the injected CSS variable */
+    --text-main-color: var(--text-primary);
+    --text-secondary-color: var(--text-secondary);
+    --red-test: rgb(255, 0, 0);
+    --green-test: rgb(0, 255, 0);
+    --yellow-test: rgb(255, 255, 0);
     font-family: 'Roboto', sans-serif;
   }
   
@@ -31,13 +35,13 @@
     fill: lightgray;
   }
   .f3 .card_add .card-body-rect {
-    fill: #3b5560;
+    fill: var(--yellow-test);  /*#3b5560*/
     stroke-width: 4px;
-    stroke: #fff;
+    stroke: var(--yellow-test);
     cursor: pointer;
   }
   .f3 g.card_add text {
-    fill: #fff;
+    fill: var(--yellow-test);
   }
   .f3 .card-main-outline {
     stroke: currentColor;
@@ -51,28 +55,28 @@
   }
   .f3 .card_add_relative {
     cursor: pointer;
-    color: #fff;
+    color: var(--yellow-test);
     transition: 0.3s;
   }
   .f3 .card_add_relative circle {
-    fill: rgba(0, 0, 0, 0);
+    fill: var(--background-color); /*rgba(0, 0, 0, 0)*/
   }
   .f3 .card_add_relative:hover {
-    color: black;
+    color: var(--background-color); /*black*/
   }
   .f3 .card_edit.pencil_icon {
-    color: #fff;
+    color: var(--yellow-test);
     transition: 0.3s;
   }
   .f3 .card_edit.pencil_icon:hover {
-    color: black;
+    color: var(--background-color); /*black*/
   }
   .f3 .card_break_link, .f3 .link_upper, .f3 .link_lower, .f3 .link_particles {
     transform-origin: 50% 50%;
     transition: 1s;
   }
   .f3 .card_break_link {
-    color: #fff;
+    color: var(--yellow-test);
   }
   .f3 .card_break_link.closed .link_upper {
     transform: translate(-140.5px, 655.6px);
@@ -95,7 +99,7 @@
     height:900px;
     max-height:90vh;
     background-color: var(--background-color);
-    color:#fff;
+    color:var(--text-main-color); /* Main color changer*/
   }
   .f3 {
     position: relative;
@@ -112,7 +116,7 @@
     width: 100%;
     padding: 8px 12px;
     margin: 8px 0;
-    border: 1px solid #ddd;
+    border: 1px solid var(--text-secondary-color);
     border-radius: 4px;
     box-sizing: border-box;
     font-size: 14px;
@@ -138,7 +142,7 @@
   
   .f3-form button[type="submit"] {
     background-color: #4CAF50;
-    color: white;
+    color: var(--text-main-color);
   }
   
   .f3-cancel-btn {
@@ -156,7 +160,7 @@
   .f3-delete-btn:hover {
     background-color: #da190b;
     border-color: #da190b;
-    color: #fff;
+    color: var(--text-main-color);
   }
   
   .f3-delete-btn:disabled {
@@ -191,7 +195,7 @@
     display: block;
     border: none;
     outline: none;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(128,128,128,.5);
     padding-bottom: 1px;
     margin-bottom: 10px;
     min-height: 18px;
@@ -215,7 +219,7 @@
     left: 10px;
     top: 8px;
     font-size: 30px;
-    color: #fff;
+    color: var(--text-main-color);
   }
   
   .f3-edit-btn {
@@ -239,7 +243,7 @@
   
   .f3 div.card {
     cursor: pointer;
-    color: #fff;
+    color: var(--text-main-color);
     position: relative;
     line-height: 1.2;
   }
@@ -259,7 +263,7 @@
     max-width: 150%;
     min-height: 22px;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: var(--background-color); /*rgba(0, 0, 0, 0.5)*/
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -362,7 +366,7 @@
   }
   
   .f3 .card-inner {
-    outline: 0px solid rgba(255, 255, 255, 1);
+    outline: 0px solid var(--background-color); /*rgba(255, 255, 255, 1)*/
     transition: outline 0.5s ease-in-out;
   }
   
@@ -373,7 +377,7 @@
     background-color: var(--male-color);
   }
   .f3 div.card-genderless .card-inner, .f3 div.card-genderless .person-icon svg {
-    background-color: lightgray;
+    background-color: rgb(225, 21, 21); /*lightgray*/
   }
   
   .f3 div.card-new-rel .card-inner, .f3 div.card-new-rel .person-icon svg {
@@ -411,23 +415,25 @@
     transform: translate(0, -2px);
   }
   .f3 div.card-main .card-inner, .f3 div.card:hover .card-inner {
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 20px 0 var(--background-color); /*rgba(0, 0, 0, 0.8)*/
   }
   
   .f3 div.card-main .card-inner {
-    outline: 4px solid rgba(220, 220, 220, 1);
+    outline: 2px solid var(--text-secondary-color); /*rgba(220, 220, 220, 1)*/
   }
   
   .f3 div.card-inner.f3-path-to-main {
-    outline: 4px solid rgba(255, 255, 255, 1);
+    outline: 3px solid var(--text-main-color); /*rgba(255, 255, 255, 1)*/
   }
   
   .f3 .link {
     transition: stroke-width 0.2s ease-in-out;
+    stroke: var(--text-main-color);
   }
   
   .f3 .link.f3-path-to-main {
-    stroke-width: 4px;
+    stroke-width: 2px;
+    stroke: var(--text-main-color);
   }
   
   
@@ -440,11 +446,11 @@
     right: 0;
     top: 0;
     width: 0;
-    height: 100%;
+    height: 100%; 
     background-color: var(--background-color);
     overflow: auto;
     flex: 0 0 auto;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 10px 0 var(--background-color); /*rgba(0, 0, 0, 0.5)*/
   }
   
   .f3-form-cont.opened {
@@ -481,13 +487,12 @@
     margin-top: 20px;
     padding: 10px 20px;
     background-color: #007bff;
-    color: white;
+    color: var(--text-main-color);
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
   }
-  
   button:hover {
     background-color: #0056b3;
   }

@@ -9,8 +9,14 @@ const getDesignTokens = (mode) => ({
       secondary: mode === "dark" ? "#040404" : "#fbfbfb", // Dark vs Light
 
     },
-    secondary: {
+    secondary: { //used in the AppBar
       main: mode === "dark" ? "#202020" : "#dfdfdf", // Dark vs Light
+    },
+    auxilary: { //used in save and download buttons
+      redText: mode === "dark" ? "#800000" : "#e60000", //
+      redBackground: mode === "dark" ? "#2e0000" : "#ffc7c7", //
+      greenText: mode === "dark" ? "#008000" : "#00e600", //
+      greenBackground: mode === "dark" ? "#002e00" : "#c7ffc7", //
     },
     background: {
       default: mode === "dark" ? "rgba(0, 0, 0, 0)" : "#ff0000", // Transparent or light gray
@@ -18,7 +24,7 @@ const getDesignTokens = (mode) => ({
     },
     text: {
       primary: mode === "dark" ? "#ffffff" : "#000000", // White or black
-      secondary: mode === "dark" ? "#e0e0e0" : "#757575", // Light or dark gray
+      secondary: mode === "dark" ? "#dddddd" : "#222222", // Darker white or lighter black
     },
   },
   spacing: 8, // Default spacing unit for the theme
@@ -33,11 +39,9 @@ const createAppTheme = (mode) => {
       fontFamily: "Verdana, Tahoma, Trebuchet MS, Arial, sans-serif",
       body1: {
         fontSize: "1rem",
-        color: baseTheme.palette.text.secondary, // Dynamic color based on mode
       },
       body2: {
         fontSize: "0.875rem",
-        color: baseTheme.palette.text.secondary, // Dynamic color based on mode
       },
     },
     components: {
