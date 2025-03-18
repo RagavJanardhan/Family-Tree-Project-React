@@ -10,8 +10,14 @@ export default class FamilyTree extends React.Component {
     if (!this.cont.current) return;
 
     // Fetch the family tree data from the backend
-    fetch("http://127.0.0.1:5000/family-data")
-      .then((response) => response.json())
+    fetch("/family-data")
+      .then((response) => {
+        console.log("Response:", response);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+      })
       .then((data) => this.create(data))
       .catch((error) => console.error("Error fetching family tree data:", error));
   }
@@ -135,8 +141,47 @@ export default class FamilyTree extends React.Component {
     console.log("Family tree data downloaded successfully!");
   };  
 
-  handleSaveButton = () => {
-    console.log("Save button clicked.");
+  handleSaveButton = async () => {
+    // Check if the chart is initialized
+    if (!this.f3Chart) {
+      console.error("f3Chart is not initialized.");
+      alert("Family tree chart is not ready yet.");
+      return;
+    }
+  
+    // Get the updated family tree data
+    const updatedData = this.f3Chart.getDataJson();
+  
+    if (!updatedData) {
+      console.error("No data available to save.");
+      alert("No data available to save.");
+      return;
+    }
+  
+    console.log("Family tree data to save:", updatedData);
+  
+    try {
+      // Send a POST request to the backend with the updated family data
+      const response = await fetch("/save-family-data", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: updatedData, // Send the JSON data
+      });
+  
+      if (response.ok) {
+        const result = await response.json();
+        alert(result.message); // Notify the user of success
+      } else {
+        const error = await response.json();
+        console.error("Error saving family tree data:", error);
+        alert("Failed to save family tree data.");
+      }
+    } catch (error) {
+      console.error("Error saving family tree data:", error);
+      alert("An error occurred while saving family tree data.");
+    }
   };
 
   render() {    

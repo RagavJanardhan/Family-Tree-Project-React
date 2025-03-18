@@ -13,7 +13,9 @@ storage_client = storage.Client()
 
 # Google Cloud Storage bucket & file details
 BUCKET_NAME = 'family-tree-bucket'
-FILENAME = 'familyTreeData.json'  # Replace with actual filename in GCS
+
+FILENAME = 'familyTreeData.json'  # .json filename in GCS bucket
+#FILENAME = 'familyTree4Members.json'  #Alternative file
 
 # Function to fetch the JSON file from Google Cloud Storage
 def get_json_from_gcs():
@@ -41,6 +43,23 @@ def get_family_data():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+@app.route('/save-family-data', methods=['POST'])
+def save_family_data():
+    try:
+        # Get the JSON data from the request
+        updated_data = request.get_json()
+
+        # Upload the updated data to the GCS bucket
+        bucket = storage_client.bucket(BUCKET_NAME)
+        blob = bucket.blob(FILENAME)
+
+        # Convert the Python dictionary to a JSON string and upload it
+        blob.upload_from_string(json.dumps(updated_data), content_type='application/json')
+
+        return jsonify({"message": "Family tree data successfully updated."}), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
 # Serving React App (index.html)
 @app.route('/')
 def index():
@@ -50,6 +69,14 @@ def index():
 @app.route('/<path:path>')
 def serve(path):
     return send_from_directory(app.static_folder, path)
+
+@app.errorhandler(404)
+def not_found(error):
+    return jsonify({"error": "Not found"}), 404
+
+@app.errorhandler(500)
+def server_error(error):
+    return jsonify({"error": "Internal server error"}), 500
 
 if __name__ == '__main__':
     app.run(debug=True)
