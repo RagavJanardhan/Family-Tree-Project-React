@@ -11,3 +11,9 @@ cd Family-Tree-Project-React
 
 #will probably have to add this to venv scripts again
 GOOGLE_APPLICATION_CREDENTIALS=C:\Users\23jan\Documents\RagavToSave\active-campus-427511-k5-76c899d06f85.json
+
+#to install the neccessary dependencies
+pip install -r requirements.txt
+
+
+
