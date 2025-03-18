@@ -12,14 +12,13 @@ export default class FamilyTree extends React.Component {
     // Fetch the family tree data from the backend
     fetch("/family-data")
       .then((response) => {
-        console.log("Response:", response);
         if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
+          throw new Error(`Failed to fetch data: ${response.statusText}`);
         }
         return response.json();
       })
       .then((data) => this.create(data))
-      .catch((error) => console.error("Error fetching family tree data:", error));
+      .catch((error) => alert("Error fetching data: " + error.message));
   }
 
   formatAgeOrAgeAtDeath = (birthday, deathDate) => {

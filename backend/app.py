@@ -16,6 +16,7 @@ BUCKET_NAME = 'family-tree-bucket'
 
 FILENAME = 'familyTreeData.json'  # .json filename in GCS bucket
 #FILENAME = 'familyTree4Members.json'  #Alternative file
+#FILENAME = 'deploymentTestData.json'  #Alternative file
 
 # Function to fetch the JSON file from Google Cloud Storage
 def get_json_from_gcs():
