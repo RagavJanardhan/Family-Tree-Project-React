@@ -1,0 +1,10 @@
+"C:\Users\23jan\Documents\RagavToSave\active-campus-427511-k5-76c899d06f85.json"
+
+#to activate the venv
+.\venv\Scripts\activate
+
+#to check if GOOGLE_APPLICATION_CREDENTIALS is set
+echo $env:GOOGLE_APPLICATION_CREDENTIALS
+
+#need this everytime to get into the projct
+cd Family-Tree-Project-React
