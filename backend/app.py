@@ -4,6 +4,11 @@ from flask_cors import CORS
 from google.cloud import storage
 import json
 
+# Set up Google Cloud credentials
+credentials_path = os.getenv("GOOGLE_APPLICATION_CREDENTIALS")
+if credentials_path:
+    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = credentials_path
+
 # Initialize Flask app
 app = Flask(__name__, static_folder="frontend/build")
 CORS(app)  # Allow cross-origin requests from React
@@ -12,7 +17,7 @@ CORS(app)  # Allow cross-origin requests from React
 storage_client = storage.Client()
 
 # Google Cloud Storage bucket & file details
-BUCKET_NAME = 'family-tree-bucket'
+BUCKET_NAME = os.getenv("BUCKET_NAME", "family-tree-bucket")  # Use environment variable or default
 
 FILENAME = 'familyTreeData.json'  # .json filename in GCS bucket
 #FILENAME = 'familyTree4Members.json'  #Alternative file
