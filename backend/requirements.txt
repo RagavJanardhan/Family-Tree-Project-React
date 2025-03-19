@@ -41,6 +41,8 @@ google-resumable-media==2.7.2
     # via google-cloud-storage
 googleapis-common-protos==1.69.2
     # via google-api-core
+gunicorn==23.0.0
+    # via -r requirements.in
 idna==3.10
     # via requests
 itsdangerous==2.2.0
@@ -51,6 +53,8 @@ markupsafe==3.0.2
     # via
     #   jinja2
     #   werkzeug
+packaging==24.2
+    # via gunicorn
 proto-plus==1.26.1
     # via google-api-core
 protobuf==6.30.1
