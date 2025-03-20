@@ -97,7 +97,7 @@ function App() {
           </Container>
         </div>
       </Router>
-    </ThemeProvider>
+    </ThemeProvider> 
   );
 }
 export default App;
