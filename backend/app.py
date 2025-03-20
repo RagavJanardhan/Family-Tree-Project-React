@@ -4,6 +4,8 @@ from flask_cors import CORS
 from google.cloud import storage
 import json
 
+# Trigger Heroku redeploy
+
 # Set up Google Cloud credentials
 credentials_path = os.getenv("GOOGLE_APPLICATION_CREDENTIALS")
 if credentials_path:
