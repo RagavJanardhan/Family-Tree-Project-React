@@ -19,8 +19,7 @@ if google_credentials:
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "backend/active-campus-427511-k5-76c899d06f85.json"
 
 # Initialize Flask app
-#app = Flask(__name__, static_folder="frontend/build")
-app = Flask(__name__, static_folder="frontend/build", static_url_path="")
+app = Flask(__name__, static_folder="../frontend/build", static_url_path="")
 CORS(app)  # Allow cross-origin requests from React
 
 # Initialize Google Cloud Storage client
@@ -77,13 +76,9 @@ def save_family_data():
         return jsonify({"error": str(e)}), 500
 
 # Serving React App (index.html)
-@app.route('/', defaults={'path': ''})
-@app.route('/<path:path>')
-def serve(path):
-    if path != "" and os.path.exists(os.path.join(app.static_folder, path)):
-        return send_from_directory(app.static_folder, path)
-    else:
-        return send_from_directory(app.static_folder, 'index.html')
+@app.route("/")
+def serve():
+    return send_from_directory(app.static_folder, "index.html")
 
 @app.errorhandler(404)
 def not_found(error):
