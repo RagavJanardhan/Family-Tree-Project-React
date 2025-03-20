@@ -79,9 +79,9 @@ def save_family_data():
 @app.route("/", defaults={"path": ""})
 @app.route("/<path:path>")
 def serve(path):
-    if path != "" and os.path.exists(os.path.join(app.static_folder, path)):
+    try:
         return send_from_directory(app.static_folder, path)
-    else:
+    except FileNotFoundError:
         return send_from_directory(app.static_folder, "index.html")
 
 @app.errorhandler(404)
