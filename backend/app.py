@@ -4,7 +4,7 @@ from flask_cors import CORS
 from google.cloud import storage
 import json
 
-#Force heroku deployment again
+#Force heroku deployment again x2
 
 '''
 # Write the GOOGLE_CREDENTIALS environment variable to a file
