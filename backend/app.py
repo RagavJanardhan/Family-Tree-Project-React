@@ -4,7 +4,7 @@ from flask_cors import CORS
 from google.cloud import storage
 import json
 
-#Force heroku deployment
+#Force heroku deployment again
 
 # Write the GOOGLE_CREDENTIALS environment variable to a file
 credentials_path = "/app/backend/active-campus-427511-k5-76c899d06f85.json"
