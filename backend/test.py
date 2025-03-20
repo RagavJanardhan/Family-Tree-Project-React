@@ -4,15 +4,22 @@ from flask_cors import CORS
 from google.cloud import storage
 import json
 
-# Trigger Heroku redeploy again
+#Force heroku deployment again x2
 
-# Set up Google Cloud credentials
-credentials_path = os.getenv("GOOGLE_APPLICATION_CREDENTIALS")
-if credentials_path:
-    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = credentials_path
+'''
+# Write the GOOGLE_CREDENTIALS environment variable to a file
+credentials_path = "/app/backend/active-campus-427511-k5-76c899d06f85.json"
+google_credentials = os.getenv("GOOGLE_CREDENTIALS")
+if google_credentials:
+    with open(credentials_path, "w") as f:
+        f.write(google_credentials)
+'''
+
+# Set the GOOGLE_APPLICATION_CREDENTIALS environment variable to point to the file
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "active-campus-427511-k5-76c899d06f85.json"
 
 # Initialize Flask app
-app = Flask(__name__, static_folder="frontend/build")
+app = Flask(__name__, static_folder="../frontend/build", static_url_path="")
 CORS(app)  # Allow cross-origin requests from React
 
 # Initialize Google Cloud Storage client
@@ -68,15 +75,33 @@ def save_family_data():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+@app.before_request
+def log_request_info():
+    print(f"\nRequest URL: {request.url}")
+    print(f"Request Path: {request.path}")
+
+'''
 # Serving React App (index.html)
 @app.route('/')
 def index():
+    print("Sending to index.html")
     return send_from_directory(app.static_folder, 'index.html')
 
-# Catch-all route for serving React's static assets (JS, CSS, etc.)
-@app.route('/<path:path>')
+'''
+@app.route("/", defaults={"path": ""})
+@app.route("/<path:path>")
 def serve(path):
-    return send_from_directory(app.static_folder, path)
+    full_path = os.path.join(app.static_folder, path)
+    print(f"Requested path: {path}")
+    print(f"Full path: {full_path}")
+    print(f"File exists: {os.path.exists(full_path)}")
+    if path != "" and os.path.exists(full_path):
+        print(f"Serving static file: {path}")
+        return send_from_directory(app.static_folder, path)
+    else:
+        print("Serving index.html")
+        return send_from_directory(app.static_folder, "index.html")
+
 
 @app.errorhandler(404)
 def not_found(error):
