@@ -12,7 +12,7 @@ if google_credentials:
         f.write(google_credentials)
 
 # Set the GOOGLE_APPLICATION_CREDENTIALS environment variable to point to the file
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = credentials_path
+os.environ["GOOGLE_CREDENTIALS"] = credentials_path
 
 # Initialize Flask app
 app = Flask(__name__, static_folder="frontend/build")
