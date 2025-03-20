@@ -4,12 +4,15 @@ from flask_cors import CORS
 from google.cloud import storage
 import json
 
-# Trigger Heroku redeploy again
+# Write the GOOGLE_CREDENTIALS environment variable to a file
+credentials_path = "/app/backend/active-campus-427511-k5-76c899d06f85.json"
+google_credentials = os.getenv("GOOGLE_CREDENTIALS")
+if google_credentials:
+    with open(credentials_path, "w") as f:
+        f.write(google_credentials)
 
-# Set up Google Cloud credentials
-credentials_path = os.getenv("GOOGLE_APPLICATION_CREDENTIALS")
-if credentials_path:
-    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = credentials_path
+# Set the GOOGLE_APPLICATION_CREDENTIALS environment variable to point to the file
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = credentials_path
 
 # Initialize Flask app
 app = Flask(__name__, static_folder="frontend/build")
