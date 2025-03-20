@@ -6,15 +6,17 @@ import json
 
 #Force heroku deployment again
 
+'''
 # Write the GOOGLE_CREDENTIALS environment variable to a file
 credentials_path = "/app/backend/active-campus-427511-k5-76c899d06f85.json"
 google_credentials = os.getenv("GOOGLE_CREDENTIALS")
 if google_credentials:
     with open(credentials_path, "w") as f:
         f.write(google_credentials)
+'''
 
 # Set the GOOGLE_APPLICATION_CREDENTIALS environment variable to point to the file
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = credentials_path
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "backend/active-campus-427511-k5-76c899d06f85.json"
 
 # Initialize Flask app
 app = Flask(__name__, static_folder="frontend/build")
