@@ -10,6 +10,7 @@ The Family Tree Project is a web-based application designed to visualize family 
 - **Flask Back End**: Manages data retrieval and serves as the API layer.
 - **Family-Chart Library**: Provides the core visualization of the family tree.
 - **Google Cloud Storage**: Allows the data for the Tree to pe persisted and accessed by many
+- **Deployment**: Deployed on Heroku. Access the live application [here](https://family-tree-test-a4ef24abe5db.herokuapp.com/).
 
 ## **File Structure**
 
@@ -69,10 +70,6 @@ Family-Tree-Project-React/
 ---
 
 ## Future Plans
-
-### Deployment
-
-- Deploy using Heroku.
 
 ### UI Improvements
 
