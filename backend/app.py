@@ -8,6 +8,7 @@ import logging
 # Set the GOOGLE_APPLICATION_CREDENTIALS environment variable to point to the file
 # Eventually want to store credentials in a more secure way
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = os.path.join(os.path.dirname(__file__), "active-campus-427511-k5-76c899d06f85.json")
+
 # Initialize Flask app
 app = Flask(__name__, static_folder="../frontend/build", static_url_path="")
 CORS(app)  # Allow cross-origin requests from React
